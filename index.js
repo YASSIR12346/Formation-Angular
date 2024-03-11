@@ -151,3 +151,43 @@ var Generic = /** @class */ (function () {
     };
     return Generic;
 }());
+//enums
+var Response;
+(function (Response) {
+    Response[Response["No"] = 0] = "No";
+    Response[Response["Yes"] = 1] = "Yes";
+})(Response || (Response = {}));
+function enumResponse(value) {
+    if (value === Response.Yes) {
+        console.log("Yes");
+    }
+    else {
+        console.log("No");
+    }
+}
+var Message;
+(function (Message) {
+    Message["Success"] = "SUCCESS";
+    Message["Failure"] = "FAILURE";
+})(Message || (Message = {}));
+function TestResult(result) {
+    if (result) {
+        return Message.Success;
+    }
+    else {
+        return Message.Failure;
+    }
+}
+console.log(TestResult(true));
+function padLeft(value, padding) {
+    // function body
+}
+function testCustomer(customer) {
+    console.log(customer.name);
+    console.log(customer.credit);
+    console.log(customer.email);
+    console.log(customer.phone);
+}
+var stringUtils_1 = require("./stringUtils");
+var capitalized = (0, stringUtils_1.capitalize)("hello, TypeScript!");
+console.log(capitalized);

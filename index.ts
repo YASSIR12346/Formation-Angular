@@ -92,7 +92,7 @@ interface Person {
     email?: string;
 }
 
-function updatePerson(person: Person, update: Person):Person {
+function updatePerson(person: Person, update: Person): Person {
     person.firstName = update.firstName;
     person.lastName = update.lastName;
     if (person.age && update.age) {
@@ -104,14 +104,14 @@ function updatePerson(person: Person, update: Person):Person {
     return person;
 }
 
-interface Circle{
+interface Circle {
     readonly CenterX: number;
     readonly CenterY: number;
     readonly radius: number;
 }
 
-function moveCircle(circle:Circle){
-    circle={CenterX:10,CenterY:10,radius:100};
+function moveCircle(circle: Circle) {
+    circle = { CenterX: 10, CenterY: 10, radius: 100 };
 }
 
 // classes
@@ -125,8 +125,8 @@ class Animal {
 }
 
 
-class Dog extends Animal{
-    move(distanceInMeters: number = 0){
+class Dog extends Animal {
+    move(distanceInMeters: number = 0) {
         console.log(`the dog ${this.name} moved ${distanceInMeters}m.`);
     }
 }
@@ -155,9 +155,9 @@ function identity<T>(arg: T): T {
     return arg;
 }
 
-let outputString=identity("myString");
-let outputNumber=identity(100);
-let outputBoolean=identity(true);
+let outputString = identity("myString");
+let outputNumber = identity(100);
+let outputBoolean = identity(true);
 
 
 
@@ -167,15 +167,80 @@ interface GenericIdentityFn<T> {
 }
 
 class Generic<T> implements GenericIdentityFn<T>{
-    fun(arg: T): T{
+    fun(arg: T): T {
         return arg;
     }
 }
 
-interface GenericArray<T>
-{
+interface GenericArray<T> {
     items: T[];
 }
+
+//enums
+
+enum Response {
+    No = 0,
+    Yes = 1
+}
+
+function enumResponse(value: Response) {
+    if (value === Response.Yes) {
+        console.log("Yes");
+    }
+    else {
+        console.log("No");
+    }
+}
+
+enum Message {
+    Success = "SUCCESS",
+    Failure = "FAILURE"
+}
+
+function TestResult(result: boolean): Message {
+    if (result) {
+        return Message.Success;
+    }
+    else {
+        return Message.Failure;
+    }
+}
+
+console.log(TestResult(true));
+
+
+
+function padLeft(value: string, padding: string | number) {
+    // function body
+}
+
+
+interface BusinessPartner {
+    name: string;
+    credit: number;
+}
+
+interface Contact {
+    email: string;
+    phone: string;
+}
+
+type Customer = BusinessPartner & Contact;
+
+function testCustomer(customer: Customer) {
+    console.log(customer.name);
+    console.log(customer.credit);
+    console.log(customer.email);
+    console.log(customer.phone);
+}
+import { capitalize } from './stringUtils';
+
+let capitalized = capitalize("hello, TypeScript!");
+
+console.log(capitalized);
+
+import greeting ,{goodbye} from './greeter';
+
 
 
 

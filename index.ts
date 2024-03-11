@@ -251,7 +251,7 @@ class Decorator {
     constructor(public name: string) { }
 }
 
-const myInstance = new Decorator("Example");
+const myInstance = new Decorator("Tested Example");
 
 
 

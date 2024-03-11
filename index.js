@@ -253,4 +253,4 @@ var Decorator = function () {
     })();
     return Decorator = _classThis;
 }();
-var myInstance = new Decorator("Example");
+var myInstance = new Decorator("Tested Example");

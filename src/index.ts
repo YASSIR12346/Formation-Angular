@@ -261,5 +261,9 @@ const todo1: Readonly<Todo> = {
     description: "..."
 };
 
+function sum(a: number, b: number): number {
+    return a + b;
+
+}
 
 export { }

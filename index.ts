@@ -69,6 +69,8 @@ function maxNumber(...values: number[]): number {
     return result;
 }
 
+//interfaces
+
 interface Vehicle {
     make: string;
     model: string;
@@ -111,5 +113,43 @@ interface Circle{
 function moveCircle(circle:Circle){
     circle={CenterX:10,CenterY:10,radius:100};
 }
+
+// classes
+
+class Animal {
+    name: string;
+    constructor(theName: string) { this.name = theName; }
+    move(distanceInMeters: number = 0) {
+        console.log(`${this.name} moved ${distanceInMeters}m.`);
+    }
+}
+
+
+class Dog extends Animal{
+    move(distanceInMeters: number = 0){
+        console.log(`the dog ${this.name} moved ${distanceInMeters}m.`);
+    }
+}
+
+let dog = new Dog("Tommy");
+dog.move(10);
+
+
+class Person {
+    private name: string;
+    constructor(name: string) { this.name = name; }
+
+    public getName(): string {
+        return this.name;
+    }
+}
+let person = new Person("John");
+//person.name // Error: 'name' is private;
+person.getName(); // OK
+
+
+
+
+
 
 export { };

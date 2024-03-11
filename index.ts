@@ -148,6 +148,34 @@ let person = new Person("John");
 person.getName(); // OK
 
 
+//Generics 
+
+function identity<T>(arg: T): T {
+    console.log(`Type of arg: ${typeof arg}`);
+    return arg;
+}
+
+let outputString=identity("myString");
+let outputNumber=identity(100);
+let outputBoolean=identity(true);
+
+
+
+
+interface GenericIdentityFn<T> {
+    fun(arg: T): T;
+}
+
+class Generic<T> implements GenericIdentityFn<T>{
+    fun(arg: T): T{
+        return arg;
+    }
+}
+
+interface GenericArray<T>
+{
+    items: T[];
+}
 
 
 

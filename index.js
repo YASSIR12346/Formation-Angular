@@ -135,3 +135,19 @@ var Person = /** @class */ (function () {
 var person = new Person("John");
 //person.name // Error: 'name' is private;
 person.getName(); // OK
+//Generics 
+function identity(arg) {
+    console.log("Type of arg: ".concat(typeof arg));
+    return arg;
+}
+var outputString = identity("myString");
+var outputNumber = identity(100);
+var outputBoolean = identity(true);
+var Generic = /** @class */ (function () {
+    function Generic() {
+    }
+    Generic.prototype.fun = function (arg) {
+        return arg;
+    };
+    return Generic;
+}());

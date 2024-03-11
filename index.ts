@@ -239,10 +239,22 @@ let capitalized = capitalize("hello, TypeScript!");
 
 console.log(capitalized);
 
-import greeting ,{goodbye} from './greeter';
+import greeting, { goodbye } from './greeter';
+
+function logged(constructor: Function) {
+    console.log(`New instance created.`);
+}
+
+
+@logged
+class Decorator {
+    constructor(public name: string) { }
+}
+
+const myInstance = new Decorator("Example");
 
 
 
 
 
-export { };
+export { }
